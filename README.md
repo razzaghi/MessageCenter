@@ -1,10 +1,10 @@
-freepost
+NAD Message Center
 ========
 
-This is the (old) code powering [freepost](http://freepo.st). We have moved to [NotABug](https://notabug.org/zPlus/freepost) and this code is no longer updated.
+This is a message senter with bootstrap and symfony framework
 
 License
 ========
 
-freepost is [free software](https://www.gnu.org/philosophy/free-sw.html) released under [GPLv3 License or later](https://www.gnu.org/copyleft/gpl.html).
+NAD Message Center is [free software](https://www.gnu.org/philosophy/free-sw.html) released under [GPLv3 License or later](https://www.gnu.org/copyleft/gpl.html).
 See "./src/LICENSE" for more information.
