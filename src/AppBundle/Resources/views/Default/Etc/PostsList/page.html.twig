@@ -28,70 +28,75 @@
 
 {# Toolbar above posts #}
 
-<ul id="toolbar" class="toolbar">
-    <li id="submit">
-        {% image '@AppBundle/Resources/public/images/pencil.png' %}
-            <img src="{{ asset_url }}" alt="" />
-        {% endimage %}
-        
-        ثبت
-    </li>
-    <li class="new {{ postsSorting == 'NEW' ? 'selected' }}">
-        جدید
-    </li>
-    <li class="hot {{ postsSorting == 'HOT' ? 'selected' }}">
-        داغ
-    </li>
-</ul>
 
-<div id="newPost" class="newPost">
-    
-    <input type="hidden" name="communityHashId" value="{{ community.hashId }}" />
-    
-    {% if app.user %}
-        <div class="title">
-عنوان
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+لیست پیام ها
+
+    </div>
+    <div class="panel-body">
+
+        <div class="btn-group" id="toolbar" role="group" aria-label="...">
+            <button type="button" class="btn btn-default new {{ postsSorting == 'NEW' ? 'selected' }}">پیام های جدید</button>
+            <button type="button" class="btn btn-default hot {{ postsSorting == 'HOT' ? 'selected' }}">پیام ها مهم</button>
+            <button type="button" id="submit" class="btn btn-primary">ثبت پیام</button>
         </div>
-        <div>
-            <input type="text" maxlength="255" name="title" />
+
+        <div id="newPost" class="newPost">
+
+            <input type="hidden" name="communityHashId" value="{{ community.hashId }}" />
+
+            {% if app.user %}
+                <div class="title">
+                    عنوان
+                </div>
+                <div>
+                    <input type="text" class="form-control" maxlength="255" name="title" />
+                </div>
+
+                <div class="title">
+                    متن
+                </div>
+                <div>
+                    {# I need the ID to reference this CKEditor textarea from javascript #}
+                    <textarea id="newPostEditor" name="newPostEditor" class="ckeditor" rows="1" cols="1"></textarea>
+                </div>
+
+                <div class="menu">
+                    <input class="buttonAction" type="submit" value="ذخیره" />
+
+                    {% image '@AppBundle/Resources/public/images/loading-bar.gif' %}
+                    <img id="loading" src="{{ asset_url }}" alt="" />
+                    {% endimage %}
+
+                    <input class="buttonActionBackground cancel" type="button" value="لغو" />
+                </div>
+            {% else %}
+                <div class="signin">
+                    <a target="_blank" href="{{ url('freepost_user_signin') }}">
+                        لطفا وارد شوید تا نظر بگذارید
+                    </a>
+                </div>
+            {% endif %}
+
         </div>
-        
-        <div class="title">
-            م
-        </div>
-        <div>
-            {# I need the ID to reference this CKEditor textarea from javascript #}
-            <textarea id="newPostEditor" name="newPostEditor" class="ckeditor" rows="1" cols="1"></textarea>
-        </div>
-        
-        <div class="menu">
-            <input class="buttonAction" type="submit" value="Post" />
-            
+
+        {# List posts here #}
+
+        <div id="postsListLoading" class="postsListLoading">
             {% image '@AppBundle/Resources/public/images/loading-bar.gif' %}
-                <img id="loading" src="{{ asset_url }}" alt="" />
+            <img id="loading" src="{{ asset_url }}" alt="" />
             {% endimage %}
-            
-            <input class="buttonActionBackground cancel" type="button" value="Cancel" />
         </div>
-    {% else %}
-        <div class="signin">
-            <a target="_blank" href="{{ url('freepost_user_signin') }}">
-                لطفا وارد شوید تا نظر بگذارید
-            </a>
-        </div>
-    {% endif %}
-    
+
+        {% include 'AppBundle:Default:Etc/PostsList/list.html.twig' %}
+
+    </div>
 </div>
 
-{# List posts here #}
 
-<div id="postsListLoading" class="postsListLoading">
-    {% image '@AppBundle/Resources/public/images/loading-bar.gif' %}
-        <img id="loading" src="{{ asset_url }}" alt="" />
-    {% endimage %}
-</div>
-
-{% include 'AppBundle:Default:Etc/PostsList/list.html.twig' %}
 
 
 

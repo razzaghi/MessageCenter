@@ -18,50 +18,6 @@
  * along with freepost. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#toolbar {
-    font-size: .8em;
-    margin: 0;
-    overflow: hidden;
-    width: 100%;
-}
-
-    #toolbar > li {
-        border-bottom: 1px solid transparent;
-        cursor: pointer;
-        display: inline-block;
-        float: right;
-        margin: 0 0 0 1em;
-        padding: .5em 0 .2em 0;
-        transition: all .5s;
-    }
-    
-    #toolbar > li:hover {
-        border-bottom-color: #aaa;
-    }
-    
-    #toolbar > li.selected {
-        border-bottom-color: #888;
-    }
-    
-    /* "Submit" button */
-    #toolbar > #submit {
-        border: 0;
-        float: left;
-        margin: 0 1em 0 0;
-        padding: .5em 1em .5em 0;
-    }
-    
-    #toolbar > #submit:hover,
-    #toolbar > #submit.selected {
-        background-color: #fff;
-    }
-    
-    #toolbar img {
-        height: 1.5em;
-        margin: 0 .5em;
-        vertical-align: middle;
-    }
-    
 #newPost {
     background: #fff;
     border-bottom: 1px solid #e1e8ed;

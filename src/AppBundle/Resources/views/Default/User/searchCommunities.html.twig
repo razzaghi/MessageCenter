@@ -20,23 +20,24 @@
 
 <div class="searchCommunities">
     
-    <div class="title">
+    {#<div class="title">
         ایجاد بحث
-    </div>
-    
+    </div>#}
+   {#
     <form class="new" action="{{ url('freepost_community_create') }}" method="post" target="_self" enctype="application/x-www-form-urlencoded">
         <input type="text" name="communityName" value="" />
-    </form>
-    
-    <div class="title">
-        مباحث
+    </form>#}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">مباحث</div>
+        <div class="panel-body">
+            {% for aCommunity in communities %}
+                <a class="none community" target="_self" href="{{ path('freepost_community', {'communityName': aCommunity.name}) }}">
+                    <img alt="" title="" src="{{ url('freepost_community_picture', {'communityHashId': aCommunity.hashId}) }}" />
+                    {{ aCommunity.name }}
+                </a>
+            {% endfor %}
+        </div>
     </div>
-    
-    {% for aCommunity in communities %}
-        <a class="none community" target="_self" href="{{ path('freepost_community', {'communityName': aCommunity.name}) }}">
-            <img alt="" title="" src="{{ url('freepost_community_picture', {'communityHashId': aCommunity.hashId}) }}" />
-            {{ aCommunity.name }}
-        </a>
-    {% endfor %}
 
 </div>

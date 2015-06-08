@@ -13,7 +13,7 @@ MySQL - 5.6.20 : Database - freepost
 
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`freepost` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `freepost`;
+USE `mc`;
 
 /*Table structure for table `comment` */
 

@@ -12,8 +12,8 @@
 
 @font-face {
     font-family: 'BMitra';
-    src: url('/bundles/app/css/fontsBMitra.eot');
-    src: url('/bundles/app/css/fontsBMitra.eot?#iefix') format('embedded-opentype'),
+    src: url('/bundles/app/css/fonts/BMitra.eot');
+    src: url('/bundles/app/css/fonts/BMitra.eot?#iefix') format('embedded-opentype'),
     url('/bundles/app/css/fonts/BMitra.woff') format('woff'),
     url('/bundles/app/css/fonts/BMitra.ttf') format('truetype'),
     url('/bundles/app/css/fonts/BMitra.svg#BMitra') format('svg');

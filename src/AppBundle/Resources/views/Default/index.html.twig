@@ -31,12 +31,14 @@
 	<title>{% block title %}{% endblock %}</title>
 
 	{% block stylesheet %}
-            
+
         {% stylesheets
             '@AppBundle/Resources/public/css/fonts/font.css'
             '@AppBundle/Resources/public/css/main.css'
             '@AppBundle/Resources/public/css/postsList.css'
-            '@AppBundle/Resources/public/css/ui-lightness/jquery.css'
+            '@AppBundle/Resources/public/css/bootstrap/css/bootstrap.min.css'
+            '@AppBundle/Resources/public/css/bootstrap/css/bootstrap-theme.min.css'
+            '@AppBundle/Resources/public/css/home.css'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
@@ -47,7 +49,8 @@
             
         {% javascripts
             '@AppBundle/Resources/public/js/jquery.js'
-            '@AppBundle/Resources/public/js/jqueryui.js'
+            '@AppBundle/Resources/public/css/bootstrap/js/bootstrap.min.js'
+            '@AppBundle/Resources/public/js/home.js'
         %}
             <script src="{{ asset_url }}"></script>
         {% endjavascripts %}
@@ -63,20 +66,49 @@
     {% endblock %}
 
 </head>
-<body>
+<body class="home">
+
+<div class="header">
+
+
+    <a class="none" target="_self" href="{{ url('freepost_homepage') }}">
+        {% image '@AppBundle/Resources/public/images/logo.png' %}
+        <img src="{{ asset_url }}" width="200" height="50" alt="" />
+        {% endimage %}
+
+    </a>
+
+    {% if not app.user %}
+        <a class="btn btn-primary left" target="_self" href="{{ url('freepost_user_signin') }}">
+            ورود
+        </a>
+    {% endif %}
+
+    <a class="btn btn-danger left" target="_self" href="{{ url('freepost_homepage') }}">
+        <i class="glyphicon glyphicon-home"></i>
+خانه
+    </a>
+
+</div>
+
 
 	{% block body %}{% endblock %}
-    
-    <div class="footer">
-        <div class="logo">
-            <a class="none" target="_self" href="{{ url('freepost_homepage') }}">
-                {% image '@AppBundle/Resources/public/images/logo.png' %}
-                    <img src="{{ asset_url }}" alt="" />
-                {% endimage %}
-            </a>
+
+<div class="header footer">
+
+
+    <a class="none" target="_self" href="{{ url('freepost_homepage') }}">
+        {% image '@AppBundle/Resources/public/images/logo.png' %}
+        <img src="{{ asset_url }}" width="200" height="50" alt="" />
+        {% endimage %}
+
+        <div>
+            تمامی حق و حقوق این نرم افزار به موسسه جام جم متعلق است
         </div>
-    </div>
-    
+
+    </a>
+
+</div>
 	{# Piwik statistics # }
 	<script type="text/javascript">
 		var _paq = _paq || [];

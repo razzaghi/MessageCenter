@@ -18,12 +18,12 @@
  * along with freepost. If not, see <http://www.gnu.org/licenses/>.
  */
 
-div.home {
+.home {
     background-color: #f5f8fa;
     min-height: 100%;
 }
 
-    div.home > .header {
+    .home > .header {
         background-color: #fff;
         border-bottom: 2px solid #e1e8ed;
         margin: 0 0 1em 0;
@@ -31,24 +31,25 @@ div.home {
         padding: 1em 2em;
     }
         
-        div.home > .header .title {
+        .home > .header .title {
             display: inline-block;
             font-size: 32px;
             font-weight: bold;
+            font-family: "BMitra" !important;
         }
     
-        div.home > .header img {
+        .home > .header img {
             vertical-align: middle;
             margin: 0 2em 0 0;
         }
         
-        div.home > .header > .signin {
+        .left {
             float: left;
-            border: #0088e4 thin solid;
-            line-height: 48px;
+            margin: 3px;
+            margin-top: 10px;
         }
         
-    div.home > .cards {
+    .home > .cards {
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -79,84 +80,84 @@ div.home {
         align-items: center;
     }
     
-    div.home > .signin {
+    .home > .signin {
         margin: auto;
         overflow: hidden;
         width: 50%;
     }
     
-        div.home > .signin > .menu {
+        .home > .signin > .menu {
             float: left;
             width: 30%;
             padding: 1em 0;
         }
         
-            div.home > .signin > .menu > li {
+            .home > .signin > .menu > li {
                 cursor: pointer;
                 padding: 1em 2em 1em 1em;
                 margin: 0 0 1px 0;
                 transition: all .5s;
             }
             
-            div.home > .signin > .menu > li:hover,
-            div.home > .signin > .menu > li.selected {
+            .home > .signin > .menu > li:hover,
+            .home > .signin > .menu > li.selected {
                 background-color: #FFAC4D;
                 color: #fff;
             }
         
-        div.home > .signin > .form {
+        .home > .signin > .form {
             border-left: 1px solid #FFAC4D;
             margin: 0 0 0 30%;
             padding: 1em 1em 1em 2em;
         }
             
-            div.home > .signin > .form > div {
+            .home > .signin > .form > div {
                 display: none;
             }
             
-            div.home > .signin > .form > div.selected {
+            .home > .signin > .form > div.selected {
                 display: block;
             }
             
-            div.home > .signin > .form .title {
+            .home > .signin > .form .title {
                 font-weight: bold;
                 margin: 1em 0;
             }
             
-            div.home > .signin > .form .buttons {
+            .home > .signin > .form .buttons {
                 margin: 1em 0 0 0;
             }
             
-            div.home > .signin > .form .tip {
+            .home > .signin > .form .tip {
                 color: #888;
                 font-size: .8em;
                 line-height: 2em;
             }
             
-            div.home > .signin > .form .validUsername {
+            .home > .signin > .form .validUsername {
                 color: #1EC900;
                 display: none;
                 line-height: 1.5em;
             }
             
-            div.home > .signin > .form .badUsername {
+            .home > .signin > .form .badUsername {
                 color: #EB1C1C;
                 display: none;
                 line-height: 1.5em;
             }
             
-    div.home .community {
+    .home .community {
         cursor: pointer;
         margin: 1em;
         padding: 0;
     }
     
-        div.home .community > .picture {
+        .home .community > .picture {
             height: 256px;
             width: 256px;
         }
         
-        div.home .community > .name {
+        .home .community > .name {
             font-size: 1.5em;
             padding: .5em;
         }

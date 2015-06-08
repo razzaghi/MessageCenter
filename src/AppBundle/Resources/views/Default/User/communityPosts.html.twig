@@ -21,20 +21,22 @@
 {# This is ajax-called to retrieve and show a list of posts for a given community #}
 
 <div class="header">
-    <img alt="" title="" src="{{ url('freepost_community_picture', {'communityHashId': community.hashId}) }}" />
-    
-    <span class="communityName">{{ community.name }}</span>
-    <br />
-    <ul class="menu">
-        <li>
-            <a class="posts" target="_self" href="{{ url('freepost_community', {'communityName': community.name}) }}">نوشته ها</a>
-        </li>
-        <li>
-            <a class="about" target="_self" href="{{ url('freepost_community_about', {'communityName': community.name}) }}">درباره</a>
-        </li>
-    </ul>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+
+            <span class="communityName">{{ community.name }}</span>
+
+            <a class="posts btn btn-default pull-left" target="_self" href="{{ url('freepost_community', {'communityName': community.name}) }}">پیام ها</a>
+
+
+        </div>
+        <div class="panel-body">
+            <div class="posts">
+                {% include 'AppBundle:Default:Etc/PostsList/page.html.twig' %}
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<div class="posts">
-    {% include 'AppBundle:Default:Etc/PostsList/page.html.twig' %}
-</div>
