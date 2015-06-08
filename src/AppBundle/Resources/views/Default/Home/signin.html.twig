@@ -1,0 +1,83 @@
+{# freepost
+ # http://freepo.st
+ # 
+ # Copyright � 2014-2015 zPlus
+ # 
+ # This file is part of freepost.
+ # freepost is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+ # the Free Software Foundation, either version 3 of the License, or
+ # (at your option) any later version.
+ # 
+ # freepost is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ # GNU General Public License for more details.
+ # 
+ # You should have received a copy of the GNU General Public License
+ # along with freepost. If not, see <http://www.gnu.org/licenses/>.
+ #}
+
+{% extends 'AppBundle:Default:Home/page.html.twig' %}
+
+{% block content %}
+    <div class="signin">
+        <ul class="menu">
+            <li class="signin selected">Sign in</li>
+            <li class="signup">کاربر جدید</li>
+        </ul>
+        <div class="form">
+            {# Signin form #}
+            <div class="signin selected">
+                <form action="{{ url('freepost_user_signin_check') }}" method="post" target="_self" enctype="application/x-www-form-urlencoded">
+                    <div class="title">نام</div>
+                    <div class="">
+                        <input type="text" name="username" value="" />
+                    </div>
+                    <div class="title">رمز عبور</div>
+                    <div class="">
+                        <input type="password" name="password" value="" />
+                    </div>
+                    <div class="buttons">
+                        <input type="submit" class="buttonAction" value="ورود" />
+                    </div>
+                </form>
+            </div>
+            
+            {# Signup form #}
+            <div class="signup">
+                <form action="{{ url('freepost_user_process_signup') }}" method="post" target="_self" enctype="application/x-www-form-urlencoded">
+                    <div class="title">انتخاب نام</div>
+                    <div class="">
+                        <input type="text" pattern="[^\\\/]++" name="username" value="" />
+                    </div>
+                    <div class="tip">
+                        پنج حرف یا بیشتر
+                    </div>
+                    <div class="tip">
+                        شما نمی توانید از کاراکتر های خاص استفاده کنید
+                    </div>
+                    <div class="validUsername">
+                        نام کاربری موجود است
+                    </div>
+                    <div class="badUsername">
+                        نام کاربری قبلا گرفته شده است
+                    </div>
+                    
+                    <div class="title">رمز عبور</div>
+                    <div class="">
+                        <input type="password" name="password" value="" />
+                    </div>
+                    <div class="tip">
+                        پنج حرف یا بیشتر
+                    </div>
+                    <div class="buttons">
+                        <input type="submit" class="buttonAction" value="ساخت کاربر" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
