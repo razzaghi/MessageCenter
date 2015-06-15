@@ -32,10 +32,21 @@
         <div class="panel-heading">مباحث</div>
         <div class="panel-body">
             {% for aCommunity in communities %}
-                <a class="none community" target="_self" href="{{ path('freepost_community', {'communityName': aCommunity.name}) }}">
-                    <img alt="" title="" src="{{ url('freepost_community_picture', {'communityHashId': aCommunity.hashId}) }}" />
-                    {{ aCommunity.name }}
-                </a>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img alt="" width="128" height="128" title="" src="{{ url('freepost_community_picture', {'communityHashId': aCommunity.hashId}) }}" />
+                        <div class="caption">
+                            <h3>{{ aCommunity.name }}</h3>
+                            <p>...</p>
+                            <p> <a class="none community" target="_self" href="{{ path('freepost_community', {'communityName': aCommunity.name}) }}">
+                                    نمایش پیام ها
+                                </a></p>
+                        </div>
+                    </div>
+                </div>
+
+
             {% endfor %}
         </div>
     </div>
